@@ -9,8 +9,10 @@
 
   <body>
 
-    <%= yield %>
     <%= render partial: "layouts/devise-navigation" %>
+    <div class="container content">
+      <%= yield %>
+    </div>
 
   </body>
 </html>

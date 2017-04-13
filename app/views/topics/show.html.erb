@@ -1,3 +1,11 @@
 <div class="row">
-  <p><%= @topic.title %></p>
+  <h2><%= @topic.title %></h2>
 </div>
+
+<%= link_to "New bookmark", new_topic_bookmark_path(@topic), class: "btn btn-info" %>
+
+<ul>
+<% @topic.bookmarks.each do | bookmark | %>
+  <li><%= bookmark.url %></li>
+<% end %>
+</ul>

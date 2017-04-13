@@ -11,8 +11,9 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
 
-  def edit
-    @topic.title = params[:topic][:title]
+  def create
+    @topic = current_user.topics.new(topic_params)
+    
     if @topic.save
       flash[:notice] = "Topic was successfully created!"
       redirect_to @topic
@@ -30,5 +31,12 @@ class TopicsController < ApplicationController
     else
       flas.now[:alert] = "There was an error deleting the post"
       render :show
+    end
+  end
+
+  private
+
+  def topic_params
+    params.require(:topic).permit(:title)
   end
 end
