@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topic = Topic.all
+    @topics = Topic.all
   end
 
   def show
@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = current_user.topics.new(topic_params)
-    
+
     if @topic.save
       flash[:notice] = "Topic was successfully created!"
       redirect_to @topic

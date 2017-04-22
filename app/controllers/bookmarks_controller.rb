@@ -37,7 +37,7 @@ class BookmarksController < ApplicationController
   end
 
   def set_topic
-    @topic = Topic.find(params[:topic_id  # [@topic, @bookmark] ==> topic_bookmark_path(@topic, @bookmark)
+    @topic = Topic.find(params[:topic_id])  # [@topic, @bookmark] ==> topic_bookmark_path(@topic, @bookmark)
   end
 
 end

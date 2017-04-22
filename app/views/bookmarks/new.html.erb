@@ -1,2 +1,15 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
+<h1>Create a new Bookmarks</h1>
+
+<div class="row">
+  <div class="form-group">
+    <%= form_for [@topic, @bookmark] do |f| %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save" %>
+  </div>
+  <% end %>
+</div>

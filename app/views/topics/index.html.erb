@@ -1,6 +1,10 @@
 <div class="panel panel-default">
   <div class="panel-heading">All Topics</div>
   <table class="table">
-    <%= @topics.title %>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td><%= link_to topic.title, topic %></td>
+      </tr>
+    <% end %>
   </table>
 </div>
