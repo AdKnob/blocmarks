@@ -31,16 +31,13 @@ class BookmarksController < ApplicationController
   end
 
   def edit
-    @user = current_user
     @bookmark = Bookmark.find(params[:id])
   end
 
   def update
-    @user = current_user
-    @topic = Topic.find(params[:id])
-    @bookmark.assign_attributes(bookmark_params)
+    @bookmark = @topic.bookmarks.find(params[:id])
 
-    if @bookmark.save
+    if @bookmark.update_attributes(bookmark_params)
       flash[:notice] = "Bookmark was updated successfully."
       redirect_to @topic
     else
