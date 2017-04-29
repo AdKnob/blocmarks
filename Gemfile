@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug', platform: :mri
